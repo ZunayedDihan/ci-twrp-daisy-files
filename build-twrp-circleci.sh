@@ -33,7 +33,7 @@ cd .. &&  cp -f installer/recovery-installer.zip .
 # Rename and copy the files
 twrp_version=$(cat ~/TWRP-9/bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
 date_time=$(date +"%d%m%Y%H%M")
-device_version=$(cat ~/TWRP-9/device/xiaomi/daisy/BoardConfig.mk | grep "TW_DEVICE_VERSION :=" | cut -f2 -d'=' -s)
+device_version=$(cat ~/TWRP-9/device/xiaomi/daisy/BoardConfig.mk | grep "TW_DEVICE_VERSION :=" | sed 's/ //g' | cut -f2 -d'=' -s)
 mkdir ~/final
 cp recovery.img ~/final/twrp-$twrp_version-"$device_version"-daisy-"$date_time"-unofficial.img
 cp recovery-installer.zip ~/final/twrp-$twrp_version-"$device_version"-daisy-"$date_time"-unofficial.zip
