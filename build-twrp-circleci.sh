@@ -9,19 +9,11 @@ git config --global color.ui false
 # Sync the source
 repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
 repo sync  -f --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
-# Apply TWRP source patches
-cp *.patch bootable/recovery
-cd bootable/recovery
-git apply 001.patch
-git apply 002.patch
-# Use daisy specific portrait_hdpi theme
-rm -rf gui/theme/portrait_hdpi
-git clone https://github.com/LinkBoi00/twrp_portrait_hdpi-daisy gui/theme/portrait_hdpi
 # Clone device tree and common tree
-cd ~/TWRP-9
 git clone --depth=1 https://github.com/LinkBoi00/twrp_device_xiaomi_daisy -b android-9.0 device/xiaomi/daisy
 git clone --depth=1 https://github.com/TeamWin/android_device_qcom_common -b android-9.0 device/qcom/common
 # Build recovery image
+cd ~/TWRP-9
 export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch omni_daisy-eng; make -j$(nproc --all) recoveryimage
 # Make the recovery installer
 cp -fr device/xiaomi/daisy/installer out/target/product/daisy
