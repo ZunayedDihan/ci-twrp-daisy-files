@@ -9,6 +9,9 @@ git config --global color.ui false
 # Sync the source
 repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
 repo sync  -f --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
+# Use https://github.com/LinkBoi00/android_bootable_recovery
+rm -rf bootable/recovery
+git clone --depth=1 https://github.com/LinkBoi00/android_bootable_recovery bootable/recovery
 # Clone device tree and common tree
 git clone --depth=1 https://github.com/LinkBoi00/twrp_device_xiaomi_daisy -b android-9.0 device/xiaomi/daisy
 git clone --depth=1 https://github.com/TeamWin/android_device_qcom_common -b android-9.0 device/qcom/common
