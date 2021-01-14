@@ -13,7 +13,7 @@ repo sync  -f --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
 rm -rf bootable/recovery
 git clone --depth=1 https://github.com/LinkBoi00/android_bootable_recovery bootable/recovery
 # Clone device tree and common tree
-git clone --depth=1 https://github.com/LinkBoi00/twrp_device_xiaomi_daisy -b android-9.0 device/xiaomi/daisy
+git clone --depth=1 https://github.com/LinkBoi00/twrp_device_xiaomi_daisy -b android-9.0-k4.0 device/xiaomi/daisy
 git clone --depth=1 https://github.com/TeamWin/android_device_qcom_common -b android-9.0 device/qcom/common
 # Build recovery image
 cd ~/TWRP-9
