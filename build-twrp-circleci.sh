@@ -33,5 +33,5 @@ mkdir ~/final
 cp recovery.img ~/final/twrp-$twrp_version-"$device_version"-daisy-"$date_time"-unofficial.img
 cp recovery-installer.zip ~/final/twrp-$twrp_version-"$device_version"-daisy-"$date_time"-unofficial.zip
 # Upload to oshi.at
-curl -T ~/final/*.img https://oshi.at 
-curl -T ~/final/*.zip https://oshi.at
+curl --upload-file ~/final/*.zip https://transfer.sh 
+curl --upload-file ~/final/*.img https://transfer.sh 
