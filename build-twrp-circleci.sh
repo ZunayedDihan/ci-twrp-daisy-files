@@ -15,7 +15,7 @@ repo sync  -f --no-clone-bundle --no-tags -j$(nproc --all)
 mkdir empty_dir
 
 # Clone device tree and common tree
-git clone --depth=1 https://github.com/ZunayedDihan/twrp_device_xiaomi_daisy-1 -b android-9.0 device/xiaomi/daisy
+git clone https://github.com/ZunayedDihan/twrp_device_xiaomi_daisy-1 -b android-9.0 device/xiaomi/daisy
 rm -rf vendor/qcom/opensource/commonsys/cryptfs_hw
 git clone --depth=1 https://github.com/TeamWin/android_device_qcom_common -b android-9.0 device/qcom/common
 # Build recovery image
