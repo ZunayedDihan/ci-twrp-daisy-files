@@ -3,18 +3,17 @@
 # Go to the working directory
 cd ~/PBRP-9
 # Configure git
-git config --global user.email "50962670+LinkBoi00@users.noreply.github.com"
-git config --global user.name "LinkBoi00"
+git config --global user.email "zunayeddihan@gmail.com"
+git config --global user.name "ZunayedDihan"
 git config --global color.ui false
 # Sync the source
 repo init --depth=1 -u git://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-9.0
 repo sync  -f --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
 # Use https://github.com/LinkBoi00/pbrp_bootable_recovery
 mkdir empty_dir
-rsync -a --delete empty_dir/    bootable/
-git clone --depth=1 https://github.com/LinkBoi00/pbrp_bootable_recovery bootable/recovery 
+
 # Clone device tree and common tree
-git clone --depth=1 https://github.com/LinkBoi00/pbrp_device_xiaomi_daisy -b pbrp-3.x device/xiaomi/daisy
+git clone --depth=1 https://github.com/ZunayedDihan/twrp_device_xiaomi_daisy-1 device/xiaomi/daisy
 rm -rf vendor/qcom/opensource/commonsys/cryptfs_hw
 git clone --depth=1 https://github.com/TeamWin/android_device_qcom_common -b android-9.0 device/qcom/common
 # Build recovery image
