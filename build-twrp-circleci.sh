@@ -10,7 +10,7 @@ git config --global user.name "ZunayedDihan"
 git config --global color.ui false
 # Sync the source
 repo init --depth=1 -u git://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-9.0
-repo sync  -f --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
+repo sync  -f --no-clone-bundle --no-tags -j$(nproc --all)
 # Use https://github.com/LinkBoi00/pbrp_bootable_recovery
 mkdir empty_dir
 
