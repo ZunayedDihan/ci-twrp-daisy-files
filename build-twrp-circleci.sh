@@ -1,7 +1,9 @@
 #!bin/bash
 
 # Go to the working directory
-cd ~/PBRP-9
+mkdir -p /tmp/PBRP-9
+cd /tmp/PBRP-9
+
 # Configure git
 git config --global user.email "zunayeddihan@gmail.com"
 git config --global user.name "ZunayedDihan"
